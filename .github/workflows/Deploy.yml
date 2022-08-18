@@ -19,3 +19,15 @@ jobs:
         with:
          name: hello-world
          path: build/libs
+         
+  deploy:
+   name: Deploy
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      
+    - uses: actions/download-artifact@v1
+      with:
+          name: hello-world
+          path: build/libs
