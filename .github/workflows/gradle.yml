@@ -11,6 +11,11 @@ jobs:
           java-version: 11
           distribution: 'adopt'
           cache: gradle
+      - name: Upload build JAR
+        uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
       - uses: gradle/gradle-build-action@v2
         with:
           arguments: build
