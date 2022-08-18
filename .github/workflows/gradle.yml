@@ -37,14 +37,3 @@ jobs:
           path: build
       - run: pwd .
       - run: ls build
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: .
-          push: true
-          tags: ghcr.io/mihkels/actions-demo:latest
-          build-args: |
-            BUILD_DATA_DIR=build/libs
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
