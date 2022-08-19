@@ -40,5 +40,5 @@ jobs:
               password: ${{ secrets.JFROG_PASSWORD }}
     - name: Docker
       run: |
-       docker build . --tag magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
-       docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
+       docker build . --tag magmutualartifactory-docker-local.jfrog.io/hello-world:${{ github.sha }}
+       docker push magmutualartifactory-docker-local.jfrog.io/hello-world:${{ github.sha }}
