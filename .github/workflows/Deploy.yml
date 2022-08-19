@@ -40,10 +40,6 @@ jobs:
               password: ${{ secrets.JFROG_PASSWORD }}
     - name: Docker
       run: |
-       docker build .
-       echo "docker image ls"
-    - name: Print my docker imageid in a separate step
-      run: | 
-       echo "docker image ls"
+       docker build . --tag magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
        docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
  
