@@ -32,8 +32,7 @@ jobs:
       with:
           name: hello-world
           path: build/libs
-                           
-    - name: Login to JFrog 🐸  
+
     - uses: jfrog/setup-jfrog-cli@v2
       env:
     # JFrog platform url (for example: https://acme.jfrog.io) 
