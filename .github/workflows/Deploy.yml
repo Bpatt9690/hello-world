@@ -34,17 +34,26 @@ jobs:
           path: build/libs
           
           
-    - uses: actions/checkout@v2
-    - name: Login to DockerHub Registry
-      run: docker login -u ${{ secrets.JFROG_USER }} -p ${{ secrets.JFROG_PASSWORD }} artifactory.magmutual.com
-          
-       
-   # - name: Login to JFrog 🐸  
-   #   uses: docker/login-action@v1
-   #   with:
-    #      registry: magmutualartifactory.jfrog.io
-    #      username: ${{ secrets.JFROG_USER }}
-    #      password: ${{ secrets.JFROG_PASSWORD }}
+    - uses: jfrog/setup-jfrog-cli@v2
+      env:
+    # JFrog platform url (for example: https://acme.jfrog.io) 
+        JF_URL: https://magmutualartifactory.jfrog.io/ui/builds
+    
+    # Basic authentication credentials
+        JF_USER: ${{ secrets.JFROG_USER }}
+        JF_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
+         #or
+    # JFrog Platform access token
+        #JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+    - run: |
+        jf rt ping      
+                 
+    #- name: Login to JFrog 🐸  
+    #  uses: docker/login-action@v1
+    #  with:
+     #     registry: magmutualartifactory.jfrog.io
+      #    username: ${{ secrets.JFROG_USER }}
+       #   password: ${{ secrets.JFROG_PASSWORD }}
   
     #- name: Build and push 🐳
      # id: docker_build
