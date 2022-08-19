@@ -32,15 +32,9 @@ jobs:
       with:
           name: hello-world
           path: build/libs
-
-    - uses: jfrog/setup-jfrog-cli@v2
-      env:
-    # JFrog platform url (for example: https://acme.jfrog.io) 
-       JF_URL: ${{ secrets.JFROG_URL }}
-    
-    # Basic authentication credentials
-       JF_USER: ${{ secrets.JFROG_USER }}
-       JF_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
-
-    - run: |
-       docker login magmutualartifactory-docker-local.jfrog.io
+ 
+    - uses: docker/login-action@v1
+      with: 
+              registry: ${{ secrets.JFROG_URL }}
+              username: ${{ secrets.USERNAME  }}
+              password: ${{ secrets.PASSWORD }}
