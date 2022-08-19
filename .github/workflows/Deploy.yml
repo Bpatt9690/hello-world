@@ -38,4 +38,5 @@ jobs:
               registry: ${{ secrets.JFROG_URL }}
               username: ${{ secrets.JFROG_USER  }}
               password: ${{ secrets.JFROG_PASSWORD }}
-              run: docker tag hello-world magmutualartifactory-docker-local.jfrog.io/docker-local:12345 .
+    - name: Start env
+      run: docker tag hello-world magmutualartifactory-docker-local.jfrog.io/docker-local:12345 .
