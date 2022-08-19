@@ -37,7 +37,7 @@ jobs:
     - uses: jfrog/setup-jfrog-cli@v2
       env:
     # JFrog platform url (for example: https://acme.jfrog.io) 
-        JF_URL: https://magmutualartifactory.jfrog.io/ui/builds
+        JF_URL: https://magmutualartifactory.jfrog.io
     
     # Basic authentication credentials
         JF_USER: ${{ secrets.JFROG_USER }}
