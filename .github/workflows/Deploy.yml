@@ -43,5 +43,5 @@ jobs:
         GIT_TAG=$GITHUB_REF_NAME
     - name: Docker
       run: |
-       docker build -t magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.head_ref }}.${{ github.sha }} .
-       docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.head_ref }}.${{ github.sha }}
+       docker build -t magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }} .
+       docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
