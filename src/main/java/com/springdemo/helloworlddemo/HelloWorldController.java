@@ -9,6 +9,6 @@ public class HelloWorldController {
 
     @RequestMapping
     public String Hello() {
-        return "Hello from spring";
+        return "Hello from springy";
     }
 }
