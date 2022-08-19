@@ -36,5 +36,5 @@ jobs:
     - uses: docker/login-action@v1
       with: 
               registry: ${{ secrets.JFROG_URL }}
-              username: ${{ secrets.USERNAME  }}
-              password: ${{ secrets.PASSWORD }}
+              username: ${{ secrets.JFROG_USER  }}
+              password: ${{ secrets.JFROG_PASSWORD }}
