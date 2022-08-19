@@ -42,4 +42,3 @@ jobs:
       run: |
        docker build . --tag magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
        docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
- 
