@@ -39,4 +39,4 @@ jobs:
               username: ${{ secrets.JFROG_USER  }}
               password: ${{ secrets.JFROG_PASSWORD }}
     - name: Start env
-      run: docker tag hello-world magmutualartifactory-docker-local.jfrog.io/docker-local:12345
+      run: docker build -t hello-world magmutualartifactory-docker-local.jfrog.io/docker-local:12345 .
