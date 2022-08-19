@@ -46,7 +46,7 @@ jobs:
     # JFrog Platform access token
         #JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
     - run: |
-        jf rt ping      
+        jfrog rt u       
                  
     #- name: Login to JFrog 🐸  
     #  uses: docker/login-action@v1
