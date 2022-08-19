@@ -43,6 +43,6 @@ jobs:
        docker build .
     - name: Print my docker imageid in a separate step
       run: | 
-       echo "imageid ${{ steps.docker_build.outputs.imageid }}"
+       echo "docker image ls"
        docker push magmutualartifactory-docker-local.jfrog.io/docker-local:${{ github.sha }}
  
