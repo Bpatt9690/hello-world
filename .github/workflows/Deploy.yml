@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-  gradle:
+  Build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
          
   deploy:
    name: Deploy
-   needs: gradle
+   needs: Build
    runs-on: ubuntu-latest
    steps:
     - name: Checkout
@@ -39,4 +39,4 @@ jobs:
               username: ${{ secrets.JFROG_USER  }}
               password: ${{ secrets.JFROG_PASSWORD }}
     - name: Start env
-      run: docker build -t hello-world magmutualartifactory-docker-local.jfrog.io/docker-local:12345 .
+      run: docker build -t magmutualartifactory-docker-local.jfrog.io/helloWorld:12345 .
