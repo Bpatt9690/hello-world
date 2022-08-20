@@ -2,6 +2,7 @@ name: CI
 on: [push]
 jobs:
   Build:
+    name: Gradle Build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -20,8 +21,8 @@ jobs:
          name: hello-world
          path: build/libs
          
-  deploy:
-   name: Deploy
+  Deploy:
+   name: Deploy Docker Image to JFROG 
    needs: Build
    runs-on: ubuntu-latest
    steps:
