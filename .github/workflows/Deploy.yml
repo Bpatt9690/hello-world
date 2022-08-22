@@ -1,5 +1,7 @@
-name: CI
-on: [push]
+name: CI/CD
+on:
+  push:
+    branches: [Develop]
 jobs:
   Build:
     name: Gradle Build
