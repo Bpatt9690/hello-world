@@ -23,7 +23,7 @@ jobs:
           JFROG_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
       - uses: actions/upload-artifact@v3
         with:
-         name: hello-world
+         name: ${{ github.event.repository.name }}
          path: build/libs
          
   Deploy:
