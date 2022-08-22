@@ -18,9 +18,12 @@ jobs:
         uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
         with:
           arguments: build
+        env:
+          JFROG_USER: ${{ secrets.JFROG_USER }}
+          JFROG_PASSWORD: ${{ secrets.JFROG_PASSWORD }}
       - uses: actions/upload-artifact@v3
         with:
-         name: hello-world
+         name: ${{ github.event.repository.name }}
          path: build/libs
          
   Deploy:
